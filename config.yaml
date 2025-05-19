@@ -1,0 +1,24 @@
+search:
+  keyword: "電腦視覺 OR 影像 OR 影像辨識 OR 深度學習 OR 機器學習 OR 自然語言處理 OR AI OR NLP OR computer vision OR machine learning OR deep learning OR data science"
+  areas: ["6001001000", "6001002000", "6001005000", "6001006000"]  # 台北市、新北市、桃園市、新竹縣市
+  job_categories: ["2007001004","2007001021","2007001020","2007001012","2007001022"]
+  max_pages: 100
+
+filter:
+  exclude_keywords: ["韌體", "硬體", "前端", "Android", "iOS", "全端", "Internet", "BIOS", "儲備幹部", "工讀生", "IC"]
+  min_employees: 300
+  min_capital: 100000000
+  min_analysis_type: 1
+
+path:
+  raw_jobs: "data/raw_jobs.json"
+  filtered_jobs: "data/filtered_jobs.json"
+  company_info: data/company_info_104.csv
+  faiss_index: "data/job_vector.index"
+  faiss_ids: "data/job_id_map.json"
+  search_result: "data/search_result.json"
+  visited: "data/visited.txt"
+
+vector:
+  top_k: 50
+  embedding_model: "sentence-transformers/all-MiniLM-L6-v2"

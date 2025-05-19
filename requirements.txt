@@ -1,0 +1,10 @@
+numpy==1.24.4
+pandas==1.5.3
+PyYAML==6.0.1
+requests==2.31.0
+tqdm==4.66.2
+beautifulsoup4==4.12.3
+faiss-cpu==1.7.4
+sentence-transformers==2.6.1
+transformers==4.39.3
+scikit-learn==1.2.2
