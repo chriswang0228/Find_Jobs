@@ -1,6 +1,8 @@
 
 # Find_Jobs
 
+Find_Jobs 是一個針對台灣 104 人力銀行打造的 **智能化求職助手**，整合職缺蒐集、條件過濾、向量化檢索與查詢推薦流程，協助使用者從大量職缺中快速篩選出最符合自身背景與偏好的職位。
+
 ---
 
 ## 專案功能架構
@@ -56,7 +58,7 @@ visited.py         記錄使用者已投遞 / 查閱的職缺（避免重複）
 
 ```yaml
 search:
-  keyword: "AI, 深度學習, 電腦視覺"
+  keyword: "電腦視覺 OR 影像辨識 OR 深度學習"
   areas: ["6001001000", "6001002000"]
   job_categories: ["2007001004", "2007001012"]
 
@@ -67,7 +69,7 @@ filter:
   min_analysis_type: 2
 
 path:
-  raw_jobs: "data/raw_jobs_YYYYMMDD.json"
+  raw_jobs: "data/raw_jobs.json"
   filtered_jobs: "data/filtered_jobs.json"
   company_info: "data/company_info_104.csv"
 ```
@@ -92,13 +94,13 @@ path:
 
 ```
 data/
-  raw_jobs.json     ← 從 104 抓取的完整職缺資料
+  raw_jobs.json              ← 從 104 抓取的完整職缺資料
   filtered_jobs.json         ← 經條件過濾後的有效職缺
   company_info_104.csv       ← 各公司基本資訊（人數 / 資本額）
   visited.txt                ← 使用者已投遞 / 瀏覽的職缺連結
-  job_vector.index             ← FAISS 向量資料庫
-  job_id_map.json              ← FAISS 索引對應的 job_id
-  search_result.json           ← 查詢推薦的職缺列表
+  job_vector.index           ← FAISS 向量資料庫
+  job_id_map.json            ← FAISS 索引對應的 job_id
+  search_result.json         ← 查詢推薦的職缺列表
 ```
 
 ---
