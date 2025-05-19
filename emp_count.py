@@ -1,11 +1,15 @@
-import json, re
+import json, re, yaml
 import pandas as pd
 import requests
 import urllib.parse
 from tqdm import tqdm
 
-# 載入你提供的 raw_jobs_20250518.json
-with open("./data/raw_jobs.json", "r", encoding="utf-8") as f:
+# 讀設定
+with open("config.yaml", "r", encoding="utf-8") as f:
+    config = yaml.safe_load(f)
+
+# 載入你提供的 raw_jobs
+with open(config["path"]["raw_jobs"], "r", encoding="utf-8") as f:
     jobs = json.load(f)
 
 # 萃取公司名稱
@@ -91,5 +95,5 @@ for cname in tqdm(companies):
     })
 
 df = pd.DataFrame(results)
-df.to_csv("./data/company_info_104.csv", index=False, encoding="utf-8-sig")
+df.to_csv(config["path"]["company_info"], index=False, encoding="utf-8-sig")
 print("✅ 已儲存到 company_info_104.csv")

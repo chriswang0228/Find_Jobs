@@ -4,7 +4,6 @@ import faiss
 from sentence_transformers import SentenceTransformer
 
 # === 可自訂查詢文字與 Top K 數量 ===
-#query_text = "尋找以 PyTorch 開發NLP或影像辨識或生成等AI應用的工程師職缺，優先考慮大型系統廠，主要開發語言為 Python，應徵人數越多越好。"
 query_text = f"""【職缺】AI工程師, 資料科學家
 【公司】具規模的科技公司，資訊公司，員工超過 1000 人
 【描述】開發 NLP、影像辨識、生成式 AI 應用，不要與遊戲，網頁，硬體等相關
